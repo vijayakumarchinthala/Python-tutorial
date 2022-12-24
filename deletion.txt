@@ -1,0 +1,27 @@
+def b_s(ar,item):
+    beg=0
+    last=len(ar)-1
+    while(beg<=last):
+        mid= (beg+last)//2
+        if (item == ar[mid]):
+            return mid
+        elif (item >ar[mid]):
+            beg=mid+1
+        else:
+            last= mid-1
+    else:
+        return False   
+n=int(input("Enter desired linear-list size(max. 50).."))
+ar=[0]*n
+for i in range(n):
+    ar[i]=int(input("Element"+str(i+1)+":"))
+s_sort(ar)
+print( "List in sorted order is",ar)
+item=int(input("Enter new element to be deleted:"))
+position=(b_s(ar,item))
+if position:
+     del ar[position]
+     print("The list after deletion",item,"is")
+     print(ar)
+else:
+     print ("SORRY! No such element in the list")

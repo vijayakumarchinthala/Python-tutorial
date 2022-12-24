@@ -1,0 +1,11 @@
+def traverse(ar):
+    size =len(ar)
+    for i in range(size):
+        print (ar[i],)
+n=int(input("Enter desired linear-list size(max. 50).."))
+ar=[0]*n
+print("Enter element for the  linear list")
+for i in range(n):
+    ar[i]=int(input("Element"+str(i+1)+":"))
+print("Traversing the list:")
+traverse(ar)

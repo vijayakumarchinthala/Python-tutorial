@@ -1,0 +1,25 @@
+def Findpos(ar,item):
+    size=len(ar)
+    if item<ar[0]:
+        return 0
+    else:
+        pos=-1
+        for i in range (size-1):
+            if (ar[i]<=item and item < ar[i+1]):
+                pos=i+1
+                break
+            if (pos==-1 and i<=size-1):
+                pos = size
+        return pos
+n=int(input("Enter desired linear-list size(max. 50).."))
+ar=[0]*n
+for i in range(n):
+   ar[i]=int(input("Element"+str(i+1)+":"))
+s_sort(ar)
+print("List in sorted order is",ar)
+item=int(input("Enetr new element to be inserted:"))
+position=Findpos(ar,item)
+shift(ar,position)
+ar[position]=item
+print("The list after insertng",item,"is")
+print(ar)

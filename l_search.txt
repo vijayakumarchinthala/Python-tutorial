@@ -1,0 +1,21 @@
+def l_s(ar,item):
+    i=0
+    while i < len(ar) and ar[i]!=item :
+        i+=1
+    if i< len(ar):
+        return i
+    else:
+        return False
+n=int(input("Enter desired linearlist(max.50).."))
+print("\nEnter elements for linear list\n")
+ar=[0]*n  # initialise list of size n with zeros
+for i in range(n):
+    ar[i]=int(input("Element" +str(i+1) +":"))
+item=int(input("\nENter element to be searched for..."))
+index = l_s(ar,item)
+if index :
+    print("\nElement found at index:",index,",position:",(index+1))
+else:
+   print("\nSorry!! Givn element not found\n")
+                            
+                                

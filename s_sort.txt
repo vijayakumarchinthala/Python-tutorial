@@ -1,0 +1,17 @@
+def s_sort(liste):
+    for curpos in range(len(liste)):
+        minpos=curpos  #starting with current position
+        for scanpos in range(curpos+1,len(liste)):
+            if liste[scanpos]<liste[minpos]:
+                minpos=scanpos
+        temp=liste[minpos]
+        liste[minpos]=liste[curpos]
+        liste[curpos]=temp
+n=int(input("Enter desired linear-list size(max. 50).."))
+ar=[0]*n
+print ("Enter element for the  linear list")
+for i in range(n):
+    ar[i]=int(input("Element"+str(i+1)+":"))
+print("Original list is:",ar)
+s_sort(ar)
+print("List after sorting:",ar)
